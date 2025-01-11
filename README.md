@@ -1,12 +1,8 @@
+
 # To-Do List Uygulaması
 Bu proje, Java Spring Boot kullanılarak geliştirilmiş bir yapılacaklar listesi uygulamasıdır. Uygulama, kullanıcıların görevlerini oluşturmasına, güncellemesine, listelemesine ve silmesine olanak tanıyan RESTful API'ler sunar. Ayrıca, API dokümantasyonu için Swagger UI entegrasyonu içerir.
 
-Aşağıda, verdiğiniz teknolojilerle güncellenmiş bir README dosyası bulunmaktadır.
-
-To-Do List Uygulaması
-Bu proje, Java Spring Boot kullanılarak geliştirilmiş bir yapılacaklar listesi uygulamasıdır. Uygulama, kullanıcıların görevlerini oluşturmasına, güncellemesine, listelemesine ve silmesine olanak tanıyan RESTful API'ler sunar. Ayrıca, API dokümantasyonu için Swagger UI entegrasyonu içerir.
-
-Kullanılan Teknolojiler
+# Kullanılan Teknolojiler
 Java 17: Uygulama geliştirmek için kullanılan temel programlama dili.
 Spring Boot: RESTful API geliştirme ve bağımlılık yönetimi.
 Spring Data JPA: Veritabanı işlemlerini kolaylaştırmak için.
@@ -14,12 +10,15 @@ PostgreSQL Database: Güçlü ve ölçeklenebilir bir ilişkisel veritabanı ç�
 Swagger UI: API dokümantasyonu ve test aracı.
 Docker: Uygulamayı konteynerize etmek ve taşınabilirliğini artırmak için.
 Docker Compose: Birden fazla servisin kolayca yönetilmesini sağlamak için.
-Özellikler
+
+#Özellikler
 CRUD işlemleri (Görev oluşturma, güncelleme, listeleme ve silme).
 Swagger UI ile API dokümantasyonu.
 Docker ile hızlı kurulum ve taşıma.
 PostgreSQL ile güçlü ve güvenilir veritabanı.
-Kurulum
+
+
+#Kurulum
 1. Docker ile Hızlı Kurulum
 Bu projeyi Docker kullanarak çalıştırabilirsiniz.
 
@@ -64,4 +63,14 @@ bash
 Kodu kopyala
 ./mvnw spring-boot:run
 Uygulama varsayılan olarak http://localhost:8081 adresinde çalışacaktır.
+
+#API Dokümantasyonu
+API uç noktalarını keşfetmek ve test etmek için Swagger UI kullanabilirsiniz. Swagger arayüzüne erişmek için tarayıcınızda şu URL'yi açın:
+
+bash
+Kodu kopyala
+http://localhost:8081/swagger-ui/index.html#/
+
+#Katkıda Bulunma
+Katkılarınızı memnuniyetle karşılıyoruz. Lütfen katkıda bulunmadan önce bir konu açarak tartışma başlatın.
 

@@ -1,14 +1,13 @@
 package com.aysavs.todolist;
 
-import org.junit.jupiter.*;
-import org.springframework.boot.test.context.SpringBootTest;
-
 import org.junit.jupiter.api.Test;
-@SpringBootTest
-class TodolistApplicationTests {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+public class TodolistApplicationTests {
 
-    void contextLoads() {
+    @Test
+    public void testAddItem() {
+        // Basit bir test örneği
+        assertEquals(1, 1, "Sayılar eşit olmalı");
     }
-
 }

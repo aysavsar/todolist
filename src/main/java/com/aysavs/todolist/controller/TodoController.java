@@ -4,6 +4,7 @@ import com.aysavs.todolist.dto.TodoDTO;
 import com.aysavs.todolist.service.TodoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/todos")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class TodoController {
     private final TodoService todoService;
 
+    @Autowired
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
     @GetMapping
     public ResponseEntity<List<TodoDTO>> getAllTodos() {
         return ResponseEntity.ok(todoService.getAllTodos());

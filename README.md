@@ -25,24 +25,24 @@ Bu projeyi Docker kullanarak çalıştırabilirsiniz.
 Projeyi klonlayın:
 
 bash
-Kodu kopyala
 git clone https://github.com/aysavsar/todolist.git
 cd todolist
+
 Docker imajını oluşturun ve başlatın:
 
 bash
-Kodu kopyala
 docker-compose up --build
+
 Uygulamayı çalıştırın: Uygulama varsayılan olarak http://localhost:8081 adresinde çalışacaktır. Swagger arayüzüne erişmek için:
 
 bash
-Kodu kopyala
 http://localhost:8081/swagger-ui/index.html#/
+
 2. Manuel Kurulum (Docker kullanmadan)
+   
 Projeyi klonlayın:
 
 bash
-Kodu kopyala
 git clone https://github.com/aysavsar/todolist.git
 cd todolist
 Gerekli bağımlılıkları yükleyin ve projeyi derleyin:

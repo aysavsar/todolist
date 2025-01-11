@@ -2,6 +2,8 @@
 # To-Do List Uygulaması
 Bu proje, Java Spring Boot kullanılarak geliştirilmiş bir yapılacaklar listesi uygulamasıdır. Uygulama, kullanıcıların görevlerini oluşturmasına, güncellemesine, listelemesine ve silmesine olanak tanıyan RESTful API'ler sunar. Ayrıca, API dokümantasyonu için Swagger UI entegrasyonu içerir.
 
+![Swagger UI Görseli](https://github.com/aysavsar/todolist/blob/main/screenshot%20(1).png)
+
 # Kullanılan Teknolojiler
 Java 17: Uygulama geliştirmek için kullanılan temel programlama dili.
 Spring Boot: RESTful API geliştirme ve bağımlılık yönetimi.

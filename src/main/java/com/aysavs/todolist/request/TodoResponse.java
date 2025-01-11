@@ -1,13 +1,21 @@
-package com.aysavs.todolist.dto;
+package com.aysavs.todolist.request;
 
-import jakarta.validation.constraints.NotBlank;
 
-public class TodoDTO {
+public class TodoResponse {
 
-    @NotBlank(message = "Title is mandatory")
+    private long id;
+
     private String title;
 
     private boolean completed;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

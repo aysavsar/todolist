@@ -1,6 +1,7 @@
 package com.aysavs.todolist.controller;
 
 import com.aysavs.todolist.dto.TodoDTO;
+import com.aysavs.todolist.request.TodoResponse;
 import com.aysavs.todolist.service.TodoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,22 +22,22 @@ public class TodoController {
         this.todoService = todoService;
     }
     @GetMapping
-    public ResponseEntity<List<TodoDTO>> getAllTodos() {
+    public ResponseEntity<List<TodoResponse>> getAllTodos() {
         return ResponseEntity.ok(todoService.getAllTodos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<TodoDTO> getTodoById(@PathVariable Long id) {
+    public ResponseEntity<TodoResponse> getTodoById(@PathVariable Long id) {
         return ResponseEntity.ok(todoService.getTodoById(id));
     }
 
     @PostMapping("/create")
-    public ResponseEntity<TodoDTO> createTodo(@Valid @RequestBody TodoDTO todoDTO) {
+    public ResponseEntity<TodoResponse> createTodo(@Valid @RequestBody TodoDTO todoDTO) {
         return ResponseEntity.ok(todoService.createTodo(todoDTO));
     }
 
     @PutMapping("/{id}/update")
-    public ResponseEntity<TodoDTO> updateTodo(@PathVariable Long id, @Valid @RequestBody TodoDTO todoDTO) {
+    public ResponseEntity<TodoResponse> updateTodo(@PathVariable Long id, @Valid @RequestBody TodoDTO todoDTO) {
         return ResponseEntity.ok(todoService.updateTodo(id, todoDTO));
     }
 
@@ -47,7 +48,7 @@ public class TodoController {
     }
 
     @GetMapping("/completed")
-    public ResponseEntity<List<TodoDTO>> getCompletedTodos() {
+    public ResponseEntity<List<TodoResponse>> getCompletedTodos() {
         return ResponseEntity.ok(todoService.getCompletedTodos());
     }
 }

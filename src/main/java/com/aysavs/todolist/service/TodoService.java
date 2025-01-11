@@ -2,11 +2,12 @@ package com.aysavs.todolist.service;
 
 import com.aysavs.todolist.dto.TodoDTO;
 import com.aysavs.todolist.entity.Todo;
+import com.aysavs.todolist.exception.TodoNotFoundException;
 import com.aysavs.todolist.repository.TodoRepository;
+import com.aysavs.todolist.request.TodoResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,25 +19,25 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public List<TodoDTO> getAllTodos() {
+    public List<TodoResponse> getAllTodos() {
         return todoRepository.findAll()
                 .stream()
                 .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }
 
-    public TodoDTO getTodoById(Long id) {
+    public TodoResponse getTodoById(Long id) {
         Todo todo = todoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Todo not found"));
+                .orElseThrow(() -> new TodoNotFoundException("Todo not found"));
         return mapToDTO(todo);
     }
 
-    public TodoDTO createTodo(TodoDTO todoDTO) {
+    public TodoResponse createTodo(TodoDTO todoDTO) {
         Todo todo = mapToEntity(todoDTO);
         return mapToDTO(todoRepository.save(todo));
     }
 
-    public TodoDTO updateTodo(Long id, TodoDTO todoDTO) {
+    public TodoResponse updateTodo(Long id, TodoDTO todoDTO) {
         Todo todo = todoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Todo not found"));
         todo.setTitle(todoDTO.getTitle());
@@ -45,27 +46,28 @@ public class TodoService {
     }
 
     public void deleteTodoById(Long id) {
-        todoRepository.deleteById(id);
+        Todo todo = todoRepository.findById(id)
+                .orElseThrow(() -> new TodoNotFoundException("Todo not found"));
+        todoRepository.deleteById(todo.getId());
     }
 
-    public List<TodoDTO> getCompletedTodos() {
+    public List<TodoResponse> getCompletedTodos() {
         return todoRepository.findByCompleted(true)
                 .stream()
                 .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }
 
-    private TodoDTO mapToDTO(Todo todo) {
-        TodoDTO dto = new TodoDTO();
-        dto.setId(todo.getId());
-        dto.setTitle(todo.getTitle());
-        dto.setCompleted(todo.isCompleted());
-        return dto;
+    private TodoResponse mapToDTO(Todo todo) {
+        TodoResponse todoResponse = new TodoResponse();
+        todoResponse.setId(todo.getId());
+        todoResponse.setTitle(todo.getTitle());
+        todoResponse.setCompleted(todo.isCompleted());
+        return todoResponse;
     }
 
     private Todo mapToEntity(TodoDTO dto) {
         Todo todo = new Todo();
-        todo.setId(dto.getId());
         todo.setTitle(dto.getTitle());
         todo.setCompleted(dto.isCompleted());
         return todo;

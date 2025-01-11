@@ -18,33 +18,32 @@ CRUD işlemleri (Görev oluşturma, güncelleme, listeleme ve silme).
 Swagger UI ile API dokümantasyonu.
 Docker ile hızlı kurulum ve taşıma.
 PostgreSQL ile güçlü ve güvenilir veritabanı.
-
-
-#Kurulum
+Kurulum
 1. Docker ile Hızlı Kurulum
 Bu projeyi Docker kullanarak çalıştırabilirsiniz.
 
 Projeyi klonlayın:
 
 bash
+Kodu kopyala
 git clone https://github.com/aysavsar/todolist.git
 cd todolist
-
 Docker imajını oluşturun ve başlatın:
 
 bash
+Kodu kopyala
 docker-compose up --build
-
-Uygulamayı çalıştırın: Uygulama varsayılan olarak http://localhost:8081 adresinde çalışacaktır. Swagger arayüzüne erişmek için:
+Uygulamayı çalıştırın:
+Uygulama varsayılan olarak http://localhost:8081 adresinde çalışacaktır. Swagger arayüzüne erişmek için:
 
 bash
+Kodu kopyala
 http://localhost:8081/swagger-ui/index.html#/
-
 2. Manuel Kurulum (Docker kullanmadan)
-   
 Projeyi klonlayın:
 
 bash
+Kodu kopyala
 git clone https://github.com/aysavsar/todolist.git
 cd todolist
 Gerekli bağımlılıkları yükleyin ve projeyi derleyin:
@@ -52,7 +51,8 @@ Gerekli bağımlılıkları yükleyin ve projeyi derleyin:
 bash
 Kodu kopyala
 ./mvnw clean install
-PostgreSQL'i yapılandırın: PostgreSQL'in yüklü ve çalışıyor olduğundan emin olun. application.properties dosyasındaki aşağıdaki bilgileri güncelleyin:
+PostgreSQL'i yapılandırın:
+PostgreSQL'in yüklü ve çalışıyor olduğundan emin olun. application.properties dosyasındaki aşağıdaki bilgileri güncelleyin:
 
 properties
 Kodu kopyala
@@ -66,13 +66,12 @@ Kodu kopyala
 ./mvnw spring-boot:run
 Uygulama varsayılan olarak http://localhost:8081 adresinde çalışacaktır.
 
-#API Dokümantasyonu
+API Dokümantasyonu
 API uç noktalarını keşfetmek ve test etmek için Swagger UI kullanabilirsiniz. Swagger arayüzüne erişmek için tarayıcınızda şu URL'yi açın:
 
 bash
 Kodu kopyala
 http://localhost:8081/swagger-ui/index.html#/
-
-#Katkıda Bulunma
+Katkıda Bulunma
 Katkılarınızı memnuniyetle karşılıyoruz. Lütfen katkıda bulunmadan önce bir konu açarak tartışma başlatın.
 
